@@ -1,0 +1,18 @@
+{
+  "name": "pi-session-notify",
+  "version": "0.1.0",
+  "description": "Windows completion notifications for Pi with Session and project labels, silent delivery and cooldown.",
+  "type": "module",
+  "license": "MIT",
+  "author": "zhitaoChen",
+  "repository": {"type": "git", "url": "git+https://github.com/zhitaoChen/pi-session-notify.git"},
+  "homepage": "https://github.com/zhitaoChen/pi-session-notify#readme",
+  "bugs": {"url": "https://github.com/zhitaoChen/pi-session-notify/issues"},
+  "keywords": ["pi-package", "pi-extension", "windows", "notifications", "session"],
+  "engines": {"node": ">=22.19.0"},
+  "peerDependencies": {"@earendil-works/pi-coding-agent": "*"},
+  "pi": {"extensions": ["./src/index.ts"]},
+  "files": ["src", "README.md", "LICENSE"],
+  "scripts": {"test": "node --test test/*.test.mjs"},
+  "publishConfig": {"access": "public", "registry": "https://registry.npmjs.org/"}
+}
