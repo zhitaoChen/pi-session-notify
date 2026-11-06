@@ -14,7 +14,8 @@ test('notification data cannot inject PowerShell or XML', () => {
   const encoded = script.match(/FromBase64String\('([^']+)'\)/)[1];
   assert.equal(JSON.parse(Buffer.from(encoded, 'base64').toString()).title, title);
   assert(script.includes('.InnerText = $d.title'));
-  assert(script.includes('<audio silent="true"/>'));
+  assert(script.includes('<audio src="ms-winsoundevent:Notification.Default"/>'));
+  assert(!script.includes('silent="true"'));
 });
 
 test('extension registers settled lifecycle and local controls', () => {

@@ -33,7 +33,7 @@ The on/off switch is process-local and resets on reload. Set `PI_WINDOWS_NOTIFIC
 
 - Notification title: `Pi · <Session name>` (or project name when unnamed).
 - Body: response settled / final assistant call failed, plus project folder name.
-- Silent toast; at most one automatic toast per 60 seconds in each process.
+- Windows default notification sound; at most one automatic toast per 60 seconds in each process. Windows sound settings and Do Not Disturb can suppress sound.
 - Windows interactive TUI only. RPC/print/JSON sessions are inactive. Manual tests submit a real Windows notification.
 - Interrupted responses do not notify. A final failed assistant call is distinguished from a normally settled response. This is **not** proof that the user's whole task succeeded; an ordinary answer may describe incomplete work or failed tools.
 - No answer excerpts, prompts, code, tool arguments or credentials. Session/folder names are shown, so do not put secrets in those names.

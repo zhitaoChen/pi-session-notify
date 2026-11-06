@@ -1,7 +1,7 @@
 {
   "name": "pi-session-notify",
   "version": "0.1.0",
-  "description": "Windows completion notifications for Pi with Session and project labels, silent delivery and cooldown.",
+  "description": "Windows completion notifications for Pi with Session and project labels, Windows notification sound and cooldown.",
   "type": "module",
   "license": "MIT",
   "author": "zhitaoChen",

@@ -19,7 +19,7 @@ $d = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('${data}')) | C
 [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime] > $null
 [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime] > $null
 $xml = New-Object Windows.Data.Xml.Dom.XmlDocument
-$xml.LoadXml('<toast duration="short"><visual><binding template="ToastGeneric"><text></text><text></text></binding></visual><audio silent="true"/></toast>')
+$xml.LoadXml('<toast duration="short"><visual><binding template="ToastGeneric"><text></text><text></text></binding></visual><audio src="ms-winsoundevent:Notification.Default"/></toast>')
 $nodes = $xml.GetElementsByTagName('text')
 $nodes.Item(0).InnerText = $d.title
 $nodes.Item(1).InnerText = $d.body
@@ -81,7 +81,7 @@ export default function (pi: ExtensionAPI) {
 				catch { ctx.ui.notify("Windows 通知未送达；检查系统通知设置。", "warning"); }
 				return;
 			} else if (action !== "status") { ctx.ui.notify("Usage: /win-notify test|on|off|status", "warning"); return; }
-			ctx.ui.notify(`Windows notifications: ${enabled ? "on" : "off"}; silent, interactive sessions only, 60s cooldown.`, "info");
+			ctx.ui.notify(`Windows notifications: ${enabled ? "on" : "off"}; Windows default sound, interactive sessions only, 60s cooldown.`, "info");
 		},
 	});
 }
